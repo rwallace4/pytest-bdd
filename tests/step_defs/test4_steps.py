@@ -1,10 +1,13 @@
-from pytest_bdd import scenario, given, when, then,
+#parameterized test
+from pytest_bdd import scenarios, parsers, given, when, then
+
+
 
 @given("the application is asking for user input")
 def step_impl():
     raise NotImplementedError(u'Given the application is asking for user input')
 
-@when("the 'year of birth' is entered as 1910")
+@when(parsers.cfparse('the "year of birth" is entered as "{initialNumber}"'))
 def step_impl():
     raise NotImplementedError(u'STEP: When the "year of birth" is entered as 1910')
 
